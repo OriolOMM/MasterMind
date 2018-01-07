@@ -10,24 +10,23 @@ import java.io.*;
 
 
 public class PersistenceCtrl {
-    public static final String USERS_FILE_PATH = "/Data/users.xml";
-    public static final String RANKINGS_FILE_PATH = "/Data/rankings.xml";
-    public static final String RECORDS_FILE_PATH = "/Data/records.xml";
-    public static final String META_FILE_PATH = "/Data/meta.xml";
-    public static final String GAMES_DIR_PATH = "/Data/Games/";
+    public static final String USERS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/users.xml").toString().replace("file:/", "");
+    public static final String RANKINGS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/rankings.xml").toString().replace("file:/", "");
+    public static final String RECORDS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/records.xml").toString().replace("file:/", "");
+    public static final String META_FILE_PATH = PersistenceCtrl.class.getResource("/Data/meta.xml").toString().replace("file:/", "");
+    public static final String GAMES_DIR_PATH = PersistenceCtrl.class.getResource("/Data/Games").toString().replace("file:/", "");
 
     public PersistenceCtrl() {}
 
     private static String getFileName(String path) {
-        switch (path) {
-            case USERS_FILE_PATH:
-                return "users.xml";
-            case RANKINGS_FILE_PATH:
-                return "rankings.xml";
-            case RECORDS_FILE_PATH:
-                return "records.xml";
-            default:
-                return null;
+        if (path.equals(USERS_FILE_PATH)) {
+            return "users.xml";
+        } else if (path.equals(RANKINGS_FILE_PATH)) {
+            return "rankings.xml";
+        } else if (path.equals(RECORDS_FILE_PATH)) {
+            return "records.xml";
+        } else {
+            return null;
         }
     }
 
