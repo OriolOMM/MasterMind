@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<java version="1.8.0_151" class="java.beans.XMLDecoder">
+ <object class="game.CodeBreaker">
+  <void property="colorClue">
+   <int>-1</int>
+  </void>
+  <void property="colorsAvailable">
+   <object class="java.util.ArrayList">
+    <void method="add">
+     <int>0</int>
+    </void>
+    <void method="add">
+     <int>1</int>
+    </void>
+    <void method="add">
+     <int>2</int>
+    </void>
+    <void method="add">
+     <int>3</int>
+    </void>
+    <void method="add">
+     <int>4</int>
+    </void>
+    <void method="add">
+     <int>5</int>
+    </void>
+   </object>
+  </void>
+  <void property="currentBoard">
+   <object class="game.Board">
+    <void property="NComb">
+     <int>10</int>
+    </void>
+    <void property="NPieces">
+     <int>4</int>
+    </void>
+    <void property="combinations">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="corrections">
+     <object class="java.util.ArrayList"/>
+    </void>
+    <void property="winnerComb">
+     <object class="game.Combination">
+      <void property="combination">
+       <object class="java.util.ArrayList">
+        <void method="add">
+         <int>1</int>
+        </void>
+        <void method="add">
+         <int>3</int>
+        </void>
+        <void method="add">
+         <int>5</int>
+        </void>
+        <void method="add">
+         <int>2</int>
+        </void>
+       </object>
+      </void>
+     </object>
+    </void>
+   </object>
+  </void>
+  <void property="difficulty">
+   <object class="java.lang.Enum" method="valueOf">
+    <class>game.DiffEnum</class>
+    <string>EASY</string>
+   </object>
+  </void>
+  <void property="elapsedTime">
+   <long>1199</long>
+  </void>
+  <void property="id">
+   <int>6</int>
+  </void>
+  <void property="initialTime">
+   <long>1515339704445</long>
+  </void>
+  <void property="lastSaveDate">
+   <object class="java.util.Date">
+    <long>1515339705644</long>
+   </object>
+  </void>
+ </object>
+</java>
