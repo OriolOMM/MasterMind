@@ -10,11 +10,11 @@ import java.io.*;
 
 
 public class PersistenceCtrl {
-    public static final String USERS_FILE_PATH = "src/resources/Data/users.xml";
-    public static final String RANKINGS_FILE_PATH = "src/resources/Data/rankings.xml";
-    public static final String RECORDS_FILE_PATH = "src/resources/Data/records.xml";
-    public static final String META_FILE_PATH = "src/resources/Data/meta.xml";
-    public static final String GAMES_DIR_PATH = "src/resources/Data/Games/";
+    public static final String USERS_FILE_PATH = "/Data/users.xml";
+    public static final String RANKINGS_FILE_PATH = "/Data/rankings.xml";
+    public static final String RECORDS_FILE_PATH = "/Data/records.xml";
+    public static final String META_FILE_PATH = "/Data/meta.xml";
+    public static final String GAMES_DIR_PATH = "/Data/Games/";
 
     public PersistenceCtrl() {}
 

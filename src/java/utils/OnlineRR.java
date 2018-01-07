@@ -70,10 +70,9 @@ public class OnlineRR {
 
         InputStream in = http.getInputStream();
 
-        //File targetFile = new File()
         File targetFile = null;
         try {
-            targetFile = new File(OnlineRR.class.getResource("/Data/" + fileName).toString());
+            targetFile = new File(OnlineRR.class.getResource("/Data/" + fileName).toURI());
         } catch (Exception e) {
             e.printStackTrace();
         }
