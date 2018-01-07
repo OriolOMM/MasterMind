@@ -87,12 +87,12 @@ public class PersistenceCtrl {
     }
 
     public static Object loadGame(int gameId, String nickname) throws FileNotFoundException {
-        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + nickname, File.separator, String.valueOf(gameId));
+        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + File.separator + nickname, File.separator, String.valueOf(gameId));
         return loadObject(path);
     }
 
     public static boolean removeGame(int gameId, String nickname) {
-        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + nickname, File.separator, String.valueOf(gameId));
+        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + File.separator + nickname, File.separator, String.valueOf(gameId));
         File f = new File(path);
         return f.delete();
     }

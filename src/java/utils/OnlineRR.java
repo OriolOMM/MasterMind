@@ -42,7 +42,7 @@ public class OnlineRR {
             out.write(boundaryBytes);
 
             // Send FILE
-            try(InputStream file = new FileInputStream(OnlineRR.class.getResource("/Data/" + fileName).toString())) {
+            try(InputStream file = new FileInputStream(OnlineRR.class.getResource("/Data/" + fileName).toURI().toString().replace("file:/", ""))) {
                 String o = "Content-Disposition: form-data; name=\"" + URLEncoder.encode(fileName,"UTF-8")
                         + "\"; filename=\"" + URLEncoder.encode(fileName,"UTF-8") + "\"\r\n\r\n";
                 out.write(o.getBytes(StandardCharsets.UTF_8));
@@ -50,6 +50,8 @@ public class OnlineRR {
                 for (int n = 0; n >= 0; n = file.read(buffer))
                     out.write(buffer, 0, n);
                 out.write("\r\n".getBytes(StandardCharsets.UTF_8));
+            } catch (URISyntaxException e) {
+                e.printStackTrace();
             }
 
             // Finish the request
