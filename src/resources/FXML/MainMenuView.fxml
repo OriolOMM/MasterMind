@@ -5,14 +5,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="250.0" prefWidth="524.0" stylesheets="@/CSS/MainMenuCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewControllers.MainMenuViewController">
+<AnchorPane prefHeight="250.0" prefWidth="524.0" stylesheets="@../CSS/MainMenuCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewControllers.MainMenuViewController">
    <children>
       <AnchorPane fx:id="back" prefHeight="600.0" prefWidth="911.0" />
       <VBox alignment="CENTER" prefHeight="600.0">
          <children>
             <ImageView fx:id="mastermind" fitHeight="300.0" fitWidth="800.0" layoutX="89.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/Images/mastermind.png" />
+                  <Image url="@../Images/mastermind.png" />
                </image>
             </ImageView>
             <HBox alignment="TOP_CENTER" layoutX="-4.0" layoutY="150.0" prefHeight="450.0" prefWidth="911.0" spacing="60.0">

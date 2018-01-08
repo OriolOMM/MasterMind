@@ -10,12 +10,12 @@ and open the template in the editor.
 
 @font-face {
     font-family: Adventure;
-    src: url("/Fonts/Adventure.otf");
+    src: url("../Fonts/Adventure.otf");
 }
 
 Label {
     -fx-font-family: "Adventure", Arial;
-    -fx-font-size: 2em;
+    -fx-font-size: 3em;
     -fx-text-fill:
         linear-gradient(to bottom, #CCCCCC 0%, #FEFEFE 30%);
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,.3), 7, 0.0, 2,2);

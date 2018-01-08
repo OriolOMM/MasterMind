@@ -10,23 +10,24 @@ import java.io.*;
 
 
 public class PersistenceCtrl {
-    public static final String USERS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/users.xml").toString().replace("file:/", "");
-    public static final String RANKINGS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/rankings.xml").toString().replace("file:/", "");
-    public static final String RECORDS_FILE_PATH = PersistenceCtrl.class.getResource("/Data/records.xml").toString().replace("file:/", "");
-    public static final String META_FILE_PATH = PersistenceCtrl.class.getResource("/Data/meta.xml").toString().replace("file:/", "");
-    public static final String GAMES_DIR_PATH = PersistenceCtrl.class.getResource("/Data/Games").toString().replace("file:/", "");
+    public static final String USERS_FILE_PATH = "./Data/users.xml";
+    public static final String RANKINGS_FILE_PATH = "./Data/rankings.xml";
+    public static final String RECORDS_FILE_PATH = "./Data/records.xml";
+    public static final String META_FILE_PATH = "./Data/meta.xml";
+    public static final String GAMES_DIR_PATH = "./Data/Games/";
 
     public PersistenceCtrl() {}
 
     private static String getFileName(String path) {
-        if (path.equals(USERS_FILE_PATH)) {
-            return "users.xml";
-        } else if (path.equals(RANKINGS_FILE_PATH)) {
-            return "rankings.xml";
-        } else if (path.equals(RECORDS_FILE_PATH)) {
-            return "records.xml";
-        } else {
-            return null;
+        switch (path) {
+            case USERS_FILE_PATH:
+                return "users.xml";
+            case RANKINGS_FILE_PATH:
+                return "rankings.xml";
+            case RECORDS_FILE_PATH:
+                return "records.xml";
+            default:
+                return null;
         }
     }
 
@@ -48,13 +49,13 @@ public class PersistenceCtrl {
         encoder.writeObject(o);
         encoder.close();
 
-        //Upload file to server
+       /* //Upload file to server
         String fileName = getFileName(path);
         if (fileName != null) try {
             OnlineRR.HttpPOSTFile(fileName);
         } catch (IOException e) {
             System.out.println("Error guardando " + fileName + " en la nube");
-        }
+        }*/
     }
 
     /**
@@ -64,14 +65,14 @@ public class PersistenceCtrl {
      * @throws FileNotFoundException
      */
     public static Object loadObject(String path) throws FileNotFoundException {
-        //Download file from server
+        /*//Download file from server
         String fileName = getFileName(path);
         if (fileName != null) try {
             OnlineRR.HttpGETFile(fileName);
         } catch (IOException e) {
             System.out.println("Error cargando " + fileName + " de la nube");
             throw new FileNotFoundException();
-        }
+        }*/
         XMLDecoder decoder =
                 new XMLDecoder(
                         new BufferedInputStream(
@@ -87,12 +88,12 @@ public class PersistenceCtrl {
     }
 
     public static Object loadGame(int gameId, String nickname) throws FileNotFoundException {
-        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + File.separator + nickname, File.separator, String.valueOf(gameId));
+        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + nickname, File.separator, String.valueOf(gameId));
         return loadObject(path);
     }
 
     public static boolean removeGame(int gameId, String nickname) {
-        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + File.separator + nickname, File.separator, String.valueOf(gameId));
+        String path = String.format("%s%s%s.xml", GAMES_DIR_PATH + nickname, File.separator, String.valueOf(gameId));
         File f = new File(path);
         return f.delete();
     }

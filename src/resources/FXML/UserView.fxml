@@ -4,7 +4,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="userSearch" prefHeight="600.0" prefWidth="911.0" stylesheets="@/CSS/MainMenuCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewControllers.UserViewController">
+<AnchorPane fx:id="userSearch" prefHeight="600.0" prefWidth="911.0" stylesheets="@../CSS/TableViewsCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="viewControllers.UserViewController">
    <children>
       <AnchorPane fx:id="back" prefHeight="600.0" prefWidth="911.0" />
       <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="911.0">

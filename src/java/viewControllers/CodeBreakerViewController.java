@@ -69,6 +69,8 @@ public class CodeBreakerViewController implements Initializable {
         secondUpdate = new Timeline(new KeyFrame(Duration.seconds(1), event -> timerLabel.setText("" + f.format(TimeUnit.SECONDS.toMinutes(++seconds)) + " : " + f.format(seconds%60))));
         secondUpdate.setCycleCount(Timeline.INDEFINITE);
 
+        timerLabel.setVisible(false);
+
     }
 
     public void setDomainCtrl(DomainCtrl domainCtrl) {
@@ -111,15 +113,23 @@ public class CodeBreakerViewController implements Initializable {
 
     public void saveGameButtonAction(ActionEvent actionEvent) {
         domainCtrl.saveGame();
-        ViewController.showInformationMessageSeconds("Partida guardada correctamente", 5);
+        ViewController.showInformationMessage("Partida guardada correctamente");
+
+        try {
+            ViewController.mainMenuView(domainCtrl);
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        }
     }
 
     public void newGameButtonAction(ActionEvent actionEvent) {
+        domainCtrl.updatePlayerOnFinishGame(false);
         Optional<DiffEnum> difficulty = ViewController.askCodeBreakerDifficulty();
         if (difficulty.isPresent()) newGame(difficulty.get());
     }
 
     public void exitButtonAction(ActionEvent actionEvent) {
+        domainCtrl.updatePlayerOnFinishGame(false);
         try {
             ViewController.mainMenuView(domainCtrl);
         } catch (MalformedURLException e) {

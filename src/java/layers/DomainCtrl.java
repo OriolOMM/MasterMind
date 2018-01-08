@@ -198,7 +198,7 @@ public class DomainCtrl {
             ArrayList<String> s = new ArrayList<>();
             s.add(rrEntry[i].getUsername());
             s.add(String.valueOf(rrEntry[i].getScore()));
-            s.add(new SimpleDateFormat("dd/mm/yyyy").format(rrEntry[i].getDate()));
+            s.add(new SimpleDateFormat("dd/MM/yyyy").format(rrEntry[i].getDate()));
             rankingList.add(s);
         }
         return rankingList;
@@ -228,7 +228,7 @@ public class DomainCtrl {
             ArrayList<String> s = new ArrayList<>();
             s.add(rrEntrys[i].getUsername());
             s.add(String.valueOf(rrEntrys[i].getScore()));
-            s.add(new SimpleDateFormat("dd/mm/yyyy").format(rrEntrys[i].getDate()));
+            s.add(new SimpleDateFormat("dd/MM/yyyy").format(rrEntrys[i].getDate()));
             recordList.add(s);
         }
         return recordList;
@@ -335,7 +335,7 @@ public class DomainCtrl {
         assert game != null;
         info.add(String.valueOf(gameId));
         info.add(game.getDificulty().toString());
-        info.add(new SimpleDateFormat("dd/mm/yyyy").format(game.getLastSaveDate()));
+        info.add(new SimpleDateFormat("dd/MM/yyyy").format(game.getLastSaveDate()));
         return info;
     }
 

@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.UUID;
@@ -74,10 +75,22 @@ public class OnlineRR {
 
         File targetFile = null;
         try {
-            targetFile = new File(OnlineRR.class.getResource("/Data/" + fileName).toURI());
+            targetFile = new File(OnlineRR.class.getResource("/Data/users.xml").toURI());
         } catch (Exception e) {
             e.printStackTrace();
         }
+        System.out.print("exists: " + targetFile.exists() + "\n");
+        System.out.print("listfiles: " + targetFile.listFiles() + "\n");
+        System.out.print("topath: " + targetFile.toPath() + "\n");
+        System.out.print("absolutepath: " + targetFile.getAbsolutePath() + "\n");
+        System.out.print("canread: " + targetFile.canRead() + "\n");
+        System.out.print("canwrite: " + targetFile.canWrite() + "\n");
+
+        File testfile = new File(".");
+
+        System.out.print("testFileabsolutepath: " + testfile.getAbsolutePath() + "\n");
+
+
         Files.copy(in, targetFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
 
         in.close();

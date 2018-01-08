@@ -5,17 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.ButtonType;
-import javafx.scene.control.Dialog;
 import javafx.stage.StageStyle;
 import layers.DomainCtrl;
 import view.Main;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.util.Optional;
-import java.util.concurrent.TimeUnit;
 
 public class ViewController {
 
@@ -23,7 +19,7 @@ public class ViewController {
         Optional<DiffEnum> difficulty = askCodeBreakerDifficulty();
         if (difficulty.isPresent()) {
             FXMLLoader Loader = new FXMLLoader();
-            Loader.setLocation(ViewController.class.getResource("/FXML/CodeBrakerView.fxml"));
+            Loader.setLocation(ViewController.class.getResource("/FXML/CodeBreakerView.fxml"));
             try {
                 Loader.load();
                 CodeBreakerViewController codeBreakerViewController = Loader.getController();
@@ -244,18 +240,5 @@ public class ViewController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
-    }
-
-    public static void showInformationMessageSeconds(String message, int seconds) {
-        Dialog<Boolean> dialog = new Dialog<>();
-        dialog.setContentText(message);
-        dialog.show();
-        try {
-            TimeUnit.SECONDS.sleep(seconds);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        dialog.setResult(Boolean.TRUE);
-        dialog.close();
     }
 }

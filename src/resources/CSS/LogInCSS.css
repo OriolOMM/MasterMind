@@ -11,7 +11,7 @@ and open the template in the editor.
 
 @font-face {
     font-family: Adventure;
-    src: url("/Fonts/Adventure.otf");
+    src: url("../Fonts/Adventure.otf");
 }
 
 AnchorPane {
@@ -69,7 +69,7 @@ TextField, PasswordField {
 
 .button {
 -fx-text-fill: white;
--fx-font-family: arial, sans-serif;
+-fx-font-family: "Adventure", arial, sans-serif;
 -fx-font-weight: bold;
 -fx-base: #706e6a;
 -fx-wrap-text: true;

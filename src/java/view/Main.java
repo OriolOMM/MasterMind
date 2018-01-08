@@ -20,7 +20,9 @@ public class Main  extends Application{
     @Override
     public void start(Stage primaryStage) throws Exception {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/FXML/LoginView.fxml"));
+        URL resource = getClass().getResource("/FXML/LoginView.fxml");
+        System.out.print("resource: " + resource + "\n");
+        loader.setLocation(resource);
         Parent root = loader.load();
         stage = primaryStage;
         stage.setTitle("Master Mind");

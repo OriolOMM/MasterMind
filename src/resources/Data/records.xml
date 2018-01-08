@@ -4,11 +4,11 @@
   <void property="maxExp">
    <void property="date">
     <object class="java.util.Date">
-     <long>1515345300754</long>
+     <long>1515399786274</long>
     </object>
    </void>
    <void property="score">
-    <double>85714.28</double>
+    <double>87797.61</double>
    </void>
    <void property="username">
     <string>j</string>
@@ -31,11 +31,11 @@
   <void property="maxWinningSpree">
    <void property="date">
     <object class="java.util.Date">
-     <long>1515345393245</long>
+     <long>1515399786274</long>
     </object>
    </void>
    <void property="score">
-    <double>3.0</double>
+    <double>4.0</double>
    </void>
    <void property="username">
     <string>j</string>
